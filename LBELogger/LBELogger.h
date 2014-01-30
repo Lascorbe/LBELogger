@@ -9,6 +9,7 @@
 
 @interface LBELogger : NSObject
 
+// logs are visible only on Debug, send YES to keep 'em visible always
 + (void) showLogsAlways:(BOOL)showLogsAlways;
 
 void LBELog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
