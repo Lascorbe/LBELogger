@@ -9,7 +9,7 @@
 
 @interface LBELogger : NSObject
 
-+ (void) showLogsOnRelease:(BOOL)showLogsOnRelease;
++ (void) showLogsAlways:(BOOL)showLogsAlways;
 
 void LBELog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 void LBELogAlways(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
