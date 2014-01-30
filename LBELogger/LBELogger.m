@@ -50,14 +50,14 @@ static BOOL showLogs;
 #endif
 }
 
-+ (void) showLogsOnRelease:(BOOL)showLogsOnRelease
++ (void) showLogsAlways:(BOOL)showLogsAlways
 {
-    showLogs = showLogsOnRelease;
+    showLogs = showLogsAlways;
 }
 
 void LBELog(NSString *format, ...)
 {
-    if (isDebug && showLogs)
+    if (isDebug || showLogs)
     {
         va_list args;
         va_start(args, format);
@@ -76,7 +76,7 @@ void LBELogAlways(NSString *format, ...)
 
 void LBELogWarning(NSString *format, ...)
 {
-    if (isDebug && showLogs)
+    if (isDebug || showLogs)
     {
         va_list args;
         va_start(args, format);
@@ -91,7 +91,7 @@ void LBELogWarning(NSString *format, ...)
 
 void LBELogError(NSString *format, ...)
 {
-    if (isDebug && showLogs)
+    if (isDebug || showLogs)
     {
         va_list args;
         va_start(args, format);
@@ -106,7 +106,7 @@ void LBELogError(NSString *format, ...)
 
 void LBELogSuccess(NSString *format, ...)
 {
-    if (isDebug && showLogs)
+    if (isDebug || showLogs)
     {
         va_list args;
         va_start(args, format);
